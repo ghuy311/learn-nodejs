@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-pro",
+  "version": "1.0.0",
+  "description": "node js pro hoidanit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghuy311/learn-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "gia huy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghuy311/learn-nodejs/issues"
+  },
+  "homepage": "https://github.com/ghuy311/learn-nodejs#readme"
+}
