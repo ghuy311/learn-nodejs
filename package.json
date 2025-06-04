@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ghuy311/learn-nodejs/issues"
   },
-  "homepage": "https://github.com/ghuy311/learn-nodejs#readme"
+  "homepage": "https://github.com/ghuy311/learn-nodejs#readme",
+  "dependencies": {
+    "express": "5.0.1"
+  }
 }
