@@ -21,19 +21,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ghuy311/learn-nodejs.git"
+    "url": "git+https://github.com/"
   },
   "keywords": [
     "nodejs",
     "express",
     "mongodb"
   ],
-  "author": "gia huy",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ghuy311/learn-nodejs/issues"
+    "url": "https://github.com"
   },
-  "homepage": "https://github.com/ghuy311/learn-nodejs#readme",
+  "homepage": "https://github.com",
   "dependencies": {
     "dotenv": "16.4.7",
     "ejs": "3.1.10",
@@ -43,6 +43,7 @@
   "devDependencies": {
     "@types/ejs": "3.1.5",
     "@types/express": "5.0.0",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "22.10.7",
     "nodemon": "3.1.9",
     "ts-node": "10.9.2",

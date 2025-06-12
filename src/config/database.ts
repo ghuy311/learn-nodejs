@@ -1,17 +1,17 @@
 // Get the client
-import mysql from 'mysql2/promise';
+import mongoose from 'mongoose';
+import 'dotenv/config';
 
-const getConnection = async () => {
-  // Create the connection to database
-  const connection = await mysql.createConnection({
-  port : 3306,
-  host: 'localhost',
-  user: 'root',
-  password: "123456",
-  database: 'nodejspro',
-  });
-  return connection;
-}
+const connectMongoDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI || '', {
+    //  dbName: '',
+    });
+    console.log('Connected to MongoDB');
+  } catch (err) {
+    console.error('MongoDB connection failed:', err);
+  }
+};
 
 
-export default getConnection;
+export default connectMongoDB ;
