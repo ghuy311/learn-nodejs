@@ -31,16 +31,8 @@ const handleDeleteUser = async(id: string) => {
 }
 
 const getAllUser = async () => {
-    const connection = await getConnection();
-    try {
-    const [results, fields] = await connection.query(
-      'SELECT * FROM `user`'
-    );
-        return results;
-  } catch (err) {
-        console.log(err);
-        return [];
-  }
+  const user = await prisma.user.findMany();
+  return user;
 }
 
 const getUserByID = async(id: string) => {
