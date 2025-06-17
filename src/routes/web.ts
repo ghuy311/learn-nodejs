@@ -15,6 +15,8 @@ const webRoutes = (app : Express) => {
     // admin routes
     router.get("/admin", getDashboardPage);
     router.get("/admin/user", getAdminUserPage);
+    router.get("/admin/create-user", getCreateUserPage);
+    
     router.get("/admin/product", getAdminProductPage);
     router.get("/admin/order", getAdminOrderPage);
     app.use("/", router);
