@@ -25,29 +25,58 @@
                 <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                 <li class="breadcrumb-item active"><a href="/admin/user">Users</a></li>
               </ol>
-              
+
               <div class="row">
                 <div class="col-6 mx-auto">
                   <div style="width: 600px; margin: auto">
                     <h3 style="padding:10px 0">Create a user:</h3>
                     <form action="/handle-create-user" method="post">
+
+                      <!-- Full name -->
                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <label for="exampleFormControlInput1" class="form-label">Full name:</label>
                         <input type="text" name="fullName" class="form-control" id="exampleFormControlInput1"
                           placeholder="Your name" />
                       </div>
 
+                      <!-- Email -->
                       <div class="mb-3">
                         <label class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" placeholder="name@example.com" />
+                        <input type="email" name="username" class="form-control" placeholder="name@example.com" />
                       </div>
+
+                      <!-- Phone and Role -->
+                      <div class="row">
+                        <div class="mb-3 col-6">
+                          <label class="form-label">Phone</label>
+                          <input type="text" class="form-control" name="phone">
+                        </div>
+                        <div class="mb-3 col-6">
+                          <label class="form-label">Role</label>
+                          <select class="form-select" name="role">
+                            <option selected disabled>Choose...</option>
+                            <% roles.forEach((role,index)=> { %>
+                              <option value="<%-role.id %>" >
+                                <%- role.name %>
+                              </option>
+                              <%})%>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Avatar -->
                       <div class="mb-3">
-                        <label for="" class="form-label">
-                          Address
-                        </label>
-                        <textarea name="address" placeholder="Your address" class="form-control" id=""
-                          rows="2"></textarea>
+                        <label for="formFile" class="form-label">Avatar</label>
+                        <input class="form-control" type="file" id="formFile" name="avatar">
                       </div>
+
+                      <!-- Address -->
+                      <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea name="address" placeholder="Your address" class="form-control" rows="2"></textarea>
+                      </div>
+
+                      <!-- Submit -->
                       <div class="mb-3">
                         <button type="submit" class="btn btn-warning"> Submit</button>
                       </div>
