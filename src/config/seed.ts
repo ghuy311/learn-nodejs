@@ -6,19 +6,23 @@ const initDatabase = async () => {
     const countUser = await prisma.user.count();
     const countRole = await prisma.role.count();
     if (countRole == 0) {
-        await prisma.role.createMany({
-            data: [
-                {
-                    name: "ADMIN",
-                    description : "Admin thì full quyền"
-                }
-                ,
-                {
-                    name: "USER",
-                    description : "User thông thường"
-                }
-            ]
-        })
+    await prisma.role.createMany({
+        data: [
+            {
+                id: 1,
+                name: "ADMIN",
+                description: "Admin thì full quyền"
+            },
+            {
+                id: 2,
+                name: "USER",
+                description: "User thông thường"
+            }
+        ],
+        skipDuplicates: true
+    })
+
+
     }
     if (countUser == 0) {
         const defaultPassword = await hashPassword("123456");

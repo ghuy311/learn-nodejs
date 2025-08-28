@@ -51,10 +51,10 @@ const getViewUser = async (req: Request, res: Response) => {
 }
 
 const postUpdateUser = async (req: Request, res: Response) => {
-    const { id, email, address, fullName } = req.body;
-    // get user by id
-    const a = await updateUserByID(id, email, address, fullName); 
-    return res.redirect("/");  
-
+    const { id, fullName, phone, role, address } = req.body;
+    const file = req.file;
+    const avatar = file?.filename ?? null;
+    await updateUserByID(id, fullName, phone, role, address, avatar); 
+    return res.redirect("/admin/user");  
 }
 export { getHomePage,getCreateUserPage, postCreateUser, postDeleteUser, getViewUser, postUpdateUser };

@@ -1,6 +1,7 @@
 import { prisma } from "config/client";
 import { ACCOUNT_TYPE } from "config/constant";
 import bcrypt from'bcrypt';
+import { resolve } from "path";
 const saltRounds = 10;
 
 const hashPassword = async(plainText : string) => {
@@ -49,12 +50,25 @@ const getUserByID = async(id: string) => {
   return user;
 } 
 
-const updateUserByID = async (id: string, email: string, address: string, fullName: string) => {
+const updateUserByID = async (
+  id: string,
+  fullName: string,
+  phone: string,
+  role: string,
+  address: string,
+  avatar: string,
+) => {
   const updateUser = await prisma.user.update({
-    where: { id : +id },
-    data: {fullName:fullName, username:email, address:address, password:"",accountType:""}
-  })
+    where: { id: +id },
+    data: {
+      fullName,
+      address,
+      phone,
+      roleId: +role,
+      ...(avatar && {avatar : avatar})
+    },
+  });
   return updateUser;
-} 
+};
 
 export{handleCreateUser, getAllUser,handleDeleteUser, getUserByID,updateUserByID, getAllRoles, hashPassword}
