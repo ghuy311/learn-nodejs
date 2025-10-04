@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // config static file
 app.use(express.static('public'))
 
+
 // config route
 webRoutes(app);
 
